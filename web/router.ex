@@ -8,8 +8,9 @@ defmodule Imposter.Router do
   scope "/", Imposter do
     pipe_through :api
 
-    get "/", PageController, :index
     resources "/_routes", RoutesController
+    resources "/_request_history", RequestHistoryController
+    delete "/_request_history", RequestHistoryController, :delete_all
     forward "/", RequestController, :handle_request
   end
 end

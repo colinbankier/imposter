@@ -12,6 +12,7 @@ defmodule Imposter do
       # Start the Ecto repository
       worker(Imposter.Repo, []),
       worker(Imposter.RouteStore, []),
+      worker(Imposter.RequestHistoryStore, []),
       # Here you could define other workers and supervisors as children
       # worker(Imposter.Worker, [arg1, arg2, arg3]),
     ]
