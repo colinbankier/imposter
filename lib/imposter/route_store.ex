@@ -11,7 +11,13 @@ defmodule Imposter.RouteStore do
 
   def add_route(method, path, response) do
     update @agent, fn routes ->
-      Dict.put_new(routes, {method, path}, response)
+      Dict.put(routes, {method, path}, response)
+    end
+  end
+
+  def get_route(method, path) do
+    get @agent, fn routes ->
+      Dict.fetch!(routes, {method, path})
     end
   end
 

@@ -10,5 +10,6 @@ defmodule Imposter.Router do
 
     get "/", PageController, :index
     resources "/_routes", RoutesController
+    forward "/", RequestController, :handle_request
   end
 end
