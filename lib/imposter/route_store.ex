@@ -34,4 +34,10 @@ defmodule Imposter.RouteStore do
       end)
     end
   end
+
+  def clear(method, path) do
+    update @agent, fn routes ->
+      Dict.delete(routes, {method, path})
+    end
+  end
 end

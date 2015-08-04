@@ -6,3 +6,30 @@ To start your new Phoenix application:
 2. Start Phoenix endpoint with `mix phoenix.server`
 
 Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
+
+## Run locally
+
+Ensure that PSQL is running
+
+Install dependencies
+
+```sh
+mix deps.get
+```
+
+Install node dependencies
+
+```sh
+npm install
+```
+
+Run tests
+```sh
+mix tests
+```
+
+Start Server
+```sh
+mix phoenix.server
+```
+

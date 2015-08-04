@@ -9,6 +9,7 @@ defmodule Imposter.Router do
     pipe_through :api
 
     resources "/_routes", RoutesController
+    delete "/_routes", RoutesController, :delete_all
     resources "/_request_history", RequestHistoryController
     delete "/_request_history", RequestHistoryController, :delete_all
     forward "/", RequestController, :handle_request
