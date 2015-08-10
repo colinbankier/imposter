@@ -34,4 +34,10 @@ defmodule Imposter.RouteStore do
       end)
     end
   end
+
+  def clear do
+    update @agent, fn routes ->
+      %{}
+    end
+  end
 end

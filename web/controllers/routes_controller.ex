@@ -16,6 +16,11 @@ defmodule Imposter.RoutesController do
     }
   end
 
+  def delete_all(conn, params) do
+    RouteStore.clear
+    json conn, %{ ok: true }
+  end
+
   defp atomify params do
     for {key, val} <- params, into: %{}, do: {String.to_atom(key), val}
   end
