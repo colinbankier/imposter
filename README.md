@@ -35,7 +35,7 @@ mix phoenix.server
 
 ## Create Routes
 
-Create a Route Example
+Create a Route
 ```sh
 POST localhost:4000/_routes
 Content-Type: application/json
@@ -48,12 +48,12 @@ Content-Type: application/json
 }
 ```
 
-View all Routes Example
+View all routes
 ```sh
 GET localhost:4000/_routes
 ```
 
-Delete all Routes
+Delete all routes
 ```sh
 DELETE localhost:4000/_routes
 ```
@@ -65,12 +65,12 @@ GET localhost:4000/baz
 
 ##View Request History
 
-View all Requests
+View all requests
 ```sh
 GET localhost:4000/_request_history
 ```
 
-View a particular Request
+View a particular request
 ```sh
 GET localhost:4000/_request_history/0
 ```
