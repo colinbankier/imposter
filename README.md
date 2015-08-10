@@ -33,3 +33,49 @@ Start Server
 mix phoenix.server
 ```
 
+## Create Routes
+
+Create a Route Example
+```sh
+POST localhost:4000/_routes
+Content-Type: application/json
+{
+  "method": "GET",
+  "path": "/baz",
+  "response": {
+    "body": "{\"foo\":\"this is a get\"}"
+  }
+}
+```
+
+View all Routes Example
+```sh
+GET localhost:4000/_routes
+```
+
+Delete all Routes
+```sh
+DELETE localhost:4000/_routes
+```
+
+View a particular route
+```sh
+GET localhost:4000/baz
+```
+
+##View Request History
+
+View all Requests
+```sh
+GET localhost:4000/_request_history
+```
+
+View a particular Request
+```sh
+GET localhost:4000/_request_history/0
+```
+
+Delete all requests
+```sh
+DELETE localhost:4000/_request_history
+```
