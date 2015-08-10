@@ -25,7 +25,7 @@ npm install
 
 Run tests
 ```sh
-mix tests
+mix test
 ```
 
 Start Server

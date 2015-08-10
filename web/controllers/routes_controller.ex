@@ -17,7 +17,7 @@ defmodule Imposter.RoutesController do
   end
 
   def delete_all(conn, params) do
-    RouteStore.clear(params["method"], params["path"])
+    RouteStore.clear
     json conn, %{ ok: true }
   end
 

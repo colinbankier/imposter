@@ -19,6 +19,15 @@ defmodule Imposter.RoutesControllerTest do
   test "creates and renders resource when data is valid", %{conn: conn} do
   	conn = post conn, routes_path(conn, :create), @attrs
   	assert conn.status == 200
-  	conn = delete conn, routes_path(conn, :delete_all), @attrs
+    assert conn.resp_body == "{\"path\":\"/baz\",\"method\":\"GET\"}"
+  	conn = delete conn, routes_path(conn, :delete_all)
+  end
+
+  test "deletes all chosen resources", %{conn: conn} do
+    conn = post conn, routes_path(conn, :create), @attrs
+    conn = delete conn, routes_path(conn, :delete_all)
+    conn = get conn, routes_path(conn, :index)
+    assert conn.status == 200
+    assert conn.resp_body == "[]"
   end
 end
